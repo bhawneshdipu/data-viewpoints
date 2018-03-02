@@ -1,0 +1,33 @@
+{% include 'nav.html' %}
+<div class="col-lg-12">
+
+    <div class="col-lg-4">
+
+        <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+
+            <label for="name" class="col-lg-4 form-group">Graph Title:</label>  <input required type="text" id="name" name="name" class="col-lg- form-group">
+            <label for="axis" class="col-lg-4 form-group">Axis Title:</label>  <input required type="text" id="axis" name="axis" class="col-lg-7 form-group">
+            <label for="xlable" class="col-lg-4 form-group">X-Lable:</label>  <input required type="text" id="xlable" name="xlable" class="col-lg-7 form-group">
+            <label for="ylable" class="col-lg-4 form-group">Y-Lable:</label>  <input required type="text" id="ylable" name="ylable" class="col-lg-7 form-group">
+            <label for="file" class="col-lg-4 form-group">File:</label> <input required type="file" name="file" id="file" class="col-lg-7 form-group">
+            <button type="submit" class="col-lg-6 form-group">Plot</button><span class="col-lg-6"></span>
+            </form>
+    </div>
+   <div class="col-lg-7">
+
+    {% load staticfiles %}
+        {% if m %}
+            {% for img in fig_count %}
+                  <img src="{% static img %}" class="col-lg-12" >
+                <p class="col-lg-6">Image: <a href="{% static img %}"> {{ img }}</a></p>
+                <p class="col-lg-6">File : <a href="{% static 'xlsx/contour.xlsx' %} ">{%  static  'xlsx/contour.xlsx' %}</a></p>
+            {% endfor %}
+        {% else %}
+            <img src="{% static 'img/contour.png' %} " class="col-lg-12" >
+            <p class="col-lg-6">File : <a href="{% static 'xlsx/test.xlsx' %} ">{%  static  'xlsx/contour.xlsx' %}</a></p>
+            <p class="col-lg-6">Image: <a href=" {% static '/img/contour.png' %} ">{% static '/img/contour.png' %} </a></p>
+        {% endif %}
+            <p class="col-lg-9">{{ msg }}</p>
+       </div>
+</div>

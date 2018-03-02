@@ -1,0 +1,154 @@
+{% block nav %}
+
+<html>
+<head>
+    <title>
+        Origin
+    </title>
+</head>
+
+
+<body style="background-color:royalblue">
+{% load staticfiles %}
+    <link href="{%  static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%  static 'css/custom.css' %}" rel="stylesheet">
+
+
+    <script title="text/javascript" src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <script title="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<nav class="navbar-default  nav   navbar-top " style="background-color: deeppink" role="navigation">
+    <div class="container">
+        <!-- Logo and responsive toggle -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand nav navbar-nav navbar-left" href="./index.php"></a>
+        </div>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/"><b>Home</b></a>
+                </li>
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Modules </b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="./graph"><b>Graph</b></a></li>
+                        <li><a   href="./ann"><b>ANN Prediction</b></a></li>
+                        <li><a   href="./fplot"><b>Function Plot</b></a></li>
+
+                    </ul>
+                </li>
+
+
+
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Basic Plot </b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="#" style="color: red"><b>Scatter plot</b></a></li>
+                        <li><a   href="./"><b>Line Plot</b></a></li>
+                        <li><a   href="./bar"><b>Bar Plot</b></a></li>
+                        <li><a   href="./pie"><b>Pie Plot</b></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Statistical Plot</b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="./histogram"><b>Histogram</b></a></li>
+                        <li><a   href="#" style="color: red;"><b>Box Plot</b></a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Scientific Plot</b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="#" style="color:red;"><b>Error Bar</b></a></li>
+                        <li><a   href="#"  style="color: red"><b>Heatmap</b></a></li>
+                        <li><a   href="./interpolation"><b>Interpolation</b></a></li>
+
+
+                        <li><a   href="./clustering"><b>Clustering</b></a></li>
+                        <li><a   href="./contour"><b>Contour</b></a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Fitting</b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="./linefit"><b>Linear</b></a></li>
+                        <li><a   href="./curvefit"><b>Ploynomial</b></a></li>
+
+                        <li><a   href="#" style="color: red"><b>Exponential</b></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+               {%  if username %}
+                <li id="username" style="background-color:deeppink;color: white;font-size:20px">{{username}}&nbsp;&nbsp;&nbsp;</li>
+                <li>
+                    <button class="btn btn-danger" id="logoutuser" name="logoutuser" onclick="deluser()" value='logout' >Logout</button>
+                </li>
+                {% endif %}
+
+                <li>
+
+                    <a  href="#"> <b></b></a>
+
+                </li>
+            </ul>
+
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="col-lg-12" >
+<div class="col-lg-12" style="color:whitesmoke;font-size:50px;font-family:'Ubuntu';text-align: center" > <p style="font-size: 70px">Data ViewPoints :</p> A web based Mathematical Software for Data Analysis.</div>
+           <div class="col-lg-12">
+               <div class="col-lg-4"></div>
+               <div class="col-lg-4">
+               <form method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <input type="text" class="col-lg-12 form-control form-group input-lg" name="username"  id=username placeholder="Your Name ?" value="{{ username }}">
+                <input type="submit" class="col-lg-12 form-group form-control input-lg btn-warning" name="submit" value="Start Ploting">
+                </form>
+
+                </div>
+
+               <div class="col-lg-4">&nbsp;</div>
+
+            </div>
+    <br>
+<div class="col-lg-12" style="color:whitesmoke;font-size:35px;font-family:'Ubuntu';text-align: center" > Advisor:- Dr. Motahar Reza </div>
+
+<div class="col-lg-12" style="color: whitesmoke;font-size: 35px;font-family: Ubuntu;text-align: center"><br>By<br></div>
+    <div class="col-lg-12">
+
+
+        <div class="col-lg-4" style="color:whitesmoke;font-size:35px;font-family:'Ubuntu';text-align: center" >
+            <div class="col-lg-12>" >Bhawnesh Dipu </div>
+
+            <div class="col-lg-12" style="color:whitesmoke;font-size:35px;font-family:'Ubuntu';text-align: center" >201316665</div>
+        </div>
+        <div class="col-lg-4"></div>
+            <div class="col-lg-4" style="color:whitesmoke;font-size:35px;font-family:'Ubuntu';text-align: center" >
+
+                <div class="col-lg-12"> Debadeepa Rath</div>
+                <div class="col-lg-12"> 201311643</div>
+
+            </div>
+</div>
+</div>
+{% endblock nav%}

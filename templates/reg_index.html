@@ -1,0 +1,63 @@
+{% include 'twnav.html' %}
+
+<div class="col-lg-12">
+
+{% if errormsg %}
+                <div class="alert alert-block alert-info">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <h4>Message!</h4>
+                             {{ errormsg }}
+                </div>
+{% endif %}
+
+
+<div class="col-lg-4"></div>
+<div class="col-lg-4">
+ <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+                <select name="stock" id="stock0">
+                    <option value="GOOGL.xlsx">Google</option>
+
+                    <option value="AAPL.xlsx">Apple</option>
+                </select>
+                <input type="submit" class="col-lg-6 form-group btn btn-success" name="start" value="Start"><span class="col-lg-6"></span>
+            </form>
+    </div>
+<div class="col-lg-4"></div>
+<div class="col-lg-12">
+
+    {% load staticfiles %}
+{% if plotgraph %}
+<div class="col-lg-12">
+                <div class="col-lg-12">
+                    <img src="{% static imagelink %} " class="col-lg-12" >
+                    <p class="col-lg-12"> Image:
+                    <a href="{% static image %}.png" download>PNG</a>
+                    <a href="{%  static image %}.jpg"download>JPG</a>
+                    <a href="{%  static image %}.jpeg" download>JPEG</a>
+                    <a href="{%  static image %}.ps" download>PS</a>
+                    <a href="{%  static image %}.pdf" download>PDF</a>
+
+                    <a href="{%  static image %}.tiff" download>TIFF</a>
+                    <a href="{%  static image %}.tif" download>TIF</a>
+                    <a href="{%  static image %}.eps" download>EPS</a>
+                    <a href="{%  static image %}.svg" download>SVG</a>
+                    <a href="{%  static image %}.svgz" download>SVGZ</a>
+                    </p>
+                </div>
+
+                <div name="bokeh" class="col-lg-6">
+                    {{ div_tag |safe}}
+                </div>
+
+
+</div>
+
+
+{% endif %}
+
+</div>
+
+
+
+</div>

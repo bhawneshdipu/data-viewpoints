@@ -1,0 +1,137 @@
+{% block nav %}
+
+<html>
+<head>
+    <title>
+        Origin
+    </title>
+
+</head>
+<body>
+
+{% load staticfiles %}
+    <link href="{%  static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%  static 'css/handsontable.full.css' %}" rel="stylesheet">
+    <link href="{%  static 'css/custom.css' %}" rel="stylesheet">
+
+    <link href="{%  static 'css/bokeh-0.12.0.min.css' %}" rel="stylesheet">
+    <link href="{%  static 'css/bokeh-widgets-0.12.0.min.css' %}" rel="stylesheet">
+
+
+    <script title="text/javascript" src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <script title="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script title="text/javascript" src="{% static 'js/handsontable.full.js' %}"></script>
+    <script title="text/javascript" src="{% static 'js/bokeh-0.12.0.min.js' %}"></script>
+    <script title="text/javascript" src="{% static 'js/bokeh-widgets-0.12.0.min.js' %}"></script>
+
+
+     <script>       {{ div_script|safe }}</script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+
+
+<script type="text/javascript" src="{% static 'js/parametric.js' %}"></script>
+
+    <script >var data={{ ddata }};</script>
+
+
+
+
+
+
+<nav class="navbar-default  nav   navbar-top  " style="background-color: deeppink" role="navigation">
+    <div class="container">
+        <!-- Logo and responsive toggle -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand nav navbar-nav navbar-left" href="./index.php"></a>
+        </div>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/"><b>Home</b></a>
+                </li>
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Modules </b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="./../graph"><b>Graph</b></a></li>
+                        <li><a   href="./../ann"><b>ANN Prediction</b></a></li>
+                        <li><a   href="./../fplot"><b>Function Plot</b></a></li>
+                        <li><a   href="./../pplot"><b>Parametric Plot</b></a></li>
+
+                    </ul>
+                </li>
+
+
+
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Basic Plot </b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="#" style="color: red"><b>Scatter plot</b></a></li>
+                        <li><a   href="./"><b>Line Plot</b></a></li>
+                        <li><a   href="./bar"><b>Bar Plot</b></a></li>
+                        <li><a   href="./pie"><b>Pie Plot</b></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Statistical Plot</b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="./histogram"><b>Histogram</b></a></li>
+                        <li><a   href="#" style="color: red;"><b>Box Plot</b></a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Scientific Plot</b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="#" style="color:red;"><b>Error Bar</b></a></li>
+                        <li><a   href="#"  style="color: red"><b>Heatmap</b></a></li>
+                        <li><a   href="./interpolation"><b>Interpolation</b></a></li>
+
+
+                        <li><a   href="./clustering"><b>Clustering</b></a></li>
+                        <li><a   href="./contour"><b>Contour</b></a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Fitting</b><span class="caret"></span></a>
+                    <ul class=" nav  dropdown-menu " aria-labelledby="Basic">
+                        <li><a   href="./linefit"><b>Linear</b></a></li>
+                        <li><a   href="./curvefit"><b>Ploynomial</b></a></li>
+
+                        <li><a   href="#" style="color: red"><b>Exponential</b></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class=" navbar-default nav navbar-nav navbar-right" style="background-color: deeppink">
+
+                <li id="username" style="background-color:deeppink;color: white;font-size:20px">{{username}}&nbsp;&nbsp;&nbsp;</li>
+                <li>
+                    <button class="btn btn-danger" id="logoutuser" name="logoutuser" onclick="deluser()" value='logout' >Logout</button>
+                </li>
+
+                <li>
+
+                    <a  href="#"> <b></b></a>
+
+                </li>            </ul>
+
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+    <div class="col-lg-12" > <a style="color: saddlebrown;font-size:large"> (9387): Data ViewPoints : A web based Mathematical Software for Data Analysis.</a></div>
+{% endblock %}

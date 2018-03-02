@@ -1,0 +1,156 @@
+{% include 'fnav.html' %}
+
+
+
+<div class="col-lg-12">
+     <div class="col-lg-6 "id="result">
+
+         <form method="post" enctype="multipart/form-data"  name="calc" id="calc" >
+            <div class="col-lg-12 form-group container">
+            <button type="button" id="addfun" name="addfun" onclick="addelement(this.value)"  value="1" class="col-lg-3 btn btn-sm btn-success">Add Function</button>
+            <input type="number" required id="xl" name="xl" class="col-lg-2 btn btn-default">
+             <label class="control-label  col-lg-2 btn btn-info " style="font-size: medium;color: white"> X-Range </label>
+             <input type="number"  required id="xr" name="xr" class="col-lg-2 btn btn-default">
+            <button type="button" id="delfun" name="delfun" onclick="deleteelement(this.value)"  value="1" class="col-lg-3 btn btn-sm btn-danger">Delete Function</button>
+                <div class="col-lg-12">
+                <div  class="col-lg-3"></div>
+                <input type="number" required id="yl" name="yl" class="col-lg-2 btn btn-default">
+                <label class="control-label  col-lg-2 btn btn-info " style="font-size: medium;color: white">Y-Range</label>
+                <input type="number"  required id="yr" name="yr" class="col-lg-2 btn btn-default">
+                <div class="col-lg-3"></div>
+                </div>
+            </div>
+                    <div id="function" name="function" class="col-lg-12 form-group">
+                        <input type="radio" id="radioresult1" name="radioresult" class="col-lg-1 form-group input-sm" value="1" checked >
+                        <input type="text" class="col-lg-10 form-group input-sm" readonly name="output1"  id="output1" placeholder="Function1"  >
+                        <input type="color" id="color" name="color1" class="col-lg-1 form-group input-sm" value="">
+                        <input type="hidden" readonly class="col-lg-12 form-control form-group input-sm" name="result1"  id="result1" placeholder="Function1" >
+
+                    </div>
+                    <input id="count" name="count" value="1" type="hidden">
+
+</div>
+
+
+                    <div class="col-lg-6">
+                    <div class="container col-lg-12">
+                        <div id="num" class="tab-pane   active">
+                        <div class="row">
+                            <button id="larr" type="button" class="calspbutton btn  btn-danger" onclick="back(this.id)">&lAarr;Delete</button>
+                            <button id="allClear" type="button" class="calbutton btn btn-danger" onclick="clearScreen()">AC</button>
+                            <button id="y" type="button" class="calbutton equals btn btn-warning" onclick="myFunction(this.id)">Y</button>
+                            <button id="x" type="button" class="calbutton equals btn btn-warning"  onclick="myFunction(this.id)">X</button>
+
+                            <button id="+" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">+</button>
+                            <button id="-" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">-</button>
+                            <button id="*" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">*</button>
+                            <button id="/" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">÷</button>
+
+                        </div>
+                        <div class="row">
+
+                            <button id="1" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">1</button>
+                            <button id="2" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">2</button>
+                            <button id="3" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">3</button>
+
+                            <button id="(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">(</button>
+                            <button id=")" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">)</button>
+                            <button id="**" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)" value="^">^</button>
+
+                            <button id="sin(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">sin()</button>
+                            <button id="cos(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">cos()</button>
+                            <button id="tan(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">tan()</button>
+
+                        </div>
+                        <div class="row">
+                            <button id="4" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">4</button>
+                            <button id="5" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">5</button>
+                            <button id="6" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">6</button>
+
+                            <button id="0" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">0</button>
+                            <button id="." type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">.</button>
+                                                    <button id="%" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">%</button>
+
+                            <button id="asin(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">asin()</button>
+
+                            <button id="acos(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">acos()</button>
+                            <button id="atan(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">atan()</button>
+
+
+                        </div>
+                        <div class="row">
+
+                            <button id="7" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">7</button>
+                            <button id="8" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">8</button>
+                            <button id="9" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">9</button>
+
+                            <button id="sqrt(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)" value="&radic;(">&radic;</button>
+
+                            <button id="cbrt(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)" value="&#8731;(">&#8731;</button>
+                            <button id="exp(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)" value="e^(">e<sup>a</sup></button>
+
+                            <button id="sinh(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">sinh()</button>
+
+                            <button id="cosh(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">cosh()</button>
+                            <button id="tanh(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">tanh()</button>
+
+                        </div>
+                            <div class="row">
+                           <button id="exp(x)" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">e<sup>x</sup></button>
+
+                            <button id="log10(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">log()</button>
+                            <button id="log(" type="button" class="calbutton btn btn-info" onclick="myFunction(this.id)">ln</button>
+                        </div>
+
+                        </div>
+                </div>
+        </div>
+
+
+
+
+
+                <input type="submit" class="form-control  input-lg btn-warning" name="submit" value="Plot">
+                </form>
+
+                </div>
+
+
+
+
+
+            </div>
+    </div>
+
+    {% load staticfiles %}
+{% if plotgraph %}
+<div class="col-lg-12">
+
+
+                <div class="col-lg-6">
+                    <img src="{% static imagelink %} " class="col-lg-12" >
+                    <p class="col-lg-12">File : <a class="btn btn-sm btn-warning"  href="{%   static  filelink %} " download>XLSX</a></p>
+                    <p class="col-lg-12"> Image:
+                    <a  class="btn btn-sm btn-warning" href="{% static  image %}.png" download>PNG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.jpg"download>JPG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.jpeg" download>JPEG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.ps" download>PS</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.pdf" download>PDF</a>
+
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.tiff" download>TIFF</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.tif" download>TIF</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.eps" download>EPS</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.svg" download>SVG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.svgz" download>SVGZ</a>
+                    </p>
+                </div>
+
+                <div name="bokeh" class="col-lg-6">
+                    {{ div_tag |safe}}
+                </div>
+
+
+</div>
+
+
+{% endif %}

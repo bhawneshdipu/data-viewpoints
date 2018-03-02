@@ -1,0 +1,50 @@
+{% include 'ann_nav.html' %}
+
+<div class="col-lg-12">
+
+    <div class="col-lg-4">
+        <h1> ANN Prediction </h1>
+        <h4 style="color: #5e5e5e;"><b>Data Source:</b>http://www.global-view.com/forex-trading-tools/forex-history/index.html</h4>
+
+        <form method="post" enctype="multipart/form-data" action="/ann/" >
+            {% csrf_token %}
+
+            <label for="name" class="col-lg-4 form-group">Graph Title:</label>  <input required type="text" id="name" name="name" class="col-lg-7 form-group">
+            <label for="axis" class="col-lg-4 form-group">Axis Title:</label>  <input required type="text" id="axis" name="axis" class="col-lg-7 form-group">
+            <label for="xlable" class="col-lg-4 form-group">X-Lable:</label>  <input required type="text" id="xlable" name="xlable" class="col-lg-7 form-group">
+            <label for="ylable" class="col-lg-4 form-group">Y-Lable:</label>  <input required type="text" id="ylable" name="ylable" class="col-lg-7 form-group">
+            <label for="activation" class="col-lg-4 form-group">Activation:</label>
+                <select class="form-control" id="activation" name="activation">
+                    <option value="relu" selected>f(x)=max(0,x)</option>
+                    <option value="logistic">sigmoid</option>
+                    <option value="tanh">f(x)=tanh(x)</option>
+                    <option value="identity"> f(x)=x</option>
+                </select>
+            <label for="solver" class="col-lg-4 form-group">Solver:</label>
+            <select class="form-control" id='solver' name='solver'>
+                <option value="adam" selected>stochastic gradient-based</option>
+                <option value="sgd">Stochastic gradient descent</option>
+                <option value="lbfgs">Limited-memory  Broyden–Fletcher–Goldfarb–Shanno (BFGS) </option>
+            </select>
+            <label for="xfile" class="col-lg-5 form-group">Training File:(.csv)</label> <input required type="file" name="xfile" id="xfile" class="col-lg-7 form-group">
+            <label for="yfile" class="col-lg-5 form-group">Target File:(.csv)</label> <input required type="file" name="yfile" id="yfile" class="col-lg-7 form-group">
+            <label for="tfile" class="col-lg-5 form-group">Test File:(.csv)</label> <input required type="file" name="tfile" id="tfile" class="col-lg-7 form-group">
+
+            <button type="submit" class="col-lg-6 form-group">Plot</button><span class="col-lg-6"></span>
+            </form>
+    </div>
+   <div class="col-lg-8">
+
+    {% load staticfiles %}
+        <img src="{% static 'img/ann.png' %} " class="col-lg-12" >
+        <p class="col-lg-6">File : <a href="{% static 'csv/xfile.csv' %} ">{%  static  'csv/xfile.csv' %}</a></p>
+
+        <p class="col-lg-6">File : <a href="{% static 'csv/yfile.csv' %} ">{%  static  'csv/yfile.csv' %}</a></p>
+
+        <p class="col-lg-6">File : <a href="{% static 'csv/tfile.csv' %} ">{%  static  'csv/tfile.csv' %}</a></p>
+
+        <p class="col-lg-6">Image: <a href=" {% static 'img/ann.png' %} ">{% static 'img/ann.png' %} </a></p>
+
+            <p class="col-lg-9">{{ msg }}</p>
+       </div>
+</div>

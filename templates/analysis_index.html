@@ -1,0 +1,112 @@
+{% include 'anav.html' %}
+
+{% if errormsg %}
+<div class="col-lg-12">
+<div class="alert alert-block alert-info">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <h4>Message!</h4>
+                             {{ errormsg }}
+</div>
+{% endif %}
+
+
+           <div class="col-lg-4">
+            <h1> analysis </h1>
+            <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+                <label for="name" class="col-lg-4 form-group">analysis Title:</label>  <input required type="text" id="name" name="name" class="col-lg-8 form-group input-sm" value="{{ name }}">
+                <label for="analysistype" class="col-lg-4 form-group">analysis Type:</label>
+                <select required class="col-lg-8 form-group input-sm" id="analysistype" name="analysistype">
+                    <option value=""></option>
+                    <option value="interpolation" class="btn btn-default">Interpolation </option>
+                    <option value="interpolation2d" class="btn btn-default">Interpolation 2D </option>
+                    <option value="linearregression" class="btn btn-default">Linear Regression</option>
+                    <option value="polynomialregression" class="btn btn-default">Polynomial Regression</option>
+                    <option value="corelation" class="btn btn-default">Corelation</option>
+
+
+                </select>
+
+
+                <div class="col-lg-12 " style="padding: 0px 0px 0px 0px" name="analysistypedata" id="analysistypedata"></div>
+                <div class="col-lg-12 " style="padding: 0px 0px 0px 0px" name="data" id="data">
+                    <input type="hidden" value="1" name="countcols" id="countcols">
+                    <input type="hidden" value="{{ selecty }}" id="selectyval" name="selectyval">
+                <label for="xdata" class="col-lg-4 form-group" id="xdatalable">X-Data</label>
+                        <select class="col-lg-8 form-group input-sm" id="xdata" name="xdata">
+                            {{ selectx|safe }}
+                        </select>
+                <label for="ydata" class="col-lg-4 form-group" id="ylable">Y-Data</label>
+                        <select class="col-lg-6 form-group input-sm" id="ydata" name="ydata">
+                            {{ selecty|safe }}
+                        </select>
+                        <input type="color" name="color" id="color"  class="col-lg-2 btn-sm" style="height:30px;padding: 0px 0px 0px 0px ;margin: 0px 0px 20px 0px">
+
+                </div>
+
+
+
+                <label for="xlable" class="col-lg-4 form-group">X-Lable:</label>  <input required type="text" id="xlable" name="xlable" class="col-lg-8 form-group" value="{{ xlable }}">
+            <label for="ylable" class="col-lg-4 form-group">Y-Lable:</label>  <input required type="text" id="ylable" name="ylable" class="col-lg-8 form-group" value="{{ ylable }}">
+            <input type="hidden" name="tabledata" id="tabledata" value="{{ ddata }}">
+            <input type="submit" class="col-lg-6 form-group btn btn-success" name="plot" value="PLOT"><span class="col-lg-6"></span>
+            </form>
+
+            </div>
+
+
+            <div class="col-lg-8">
+                <form  method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" id="name" name="name" value="{{ name }}">
+                    <input type="hidden" id="axis" name="axis" value="{{ axis }}">
+                    <input type="hidden" id="xlabe" name="xlable" value="{{ xlable }}">
+                    <input type="hidden" id="ylabe" name="ylable" value="{{ ylable }}">
+
+                    <input type="button" class="btn-default btn btn-warning" name="saveChanges" id="saveChanges" value="Save"  onclick="save()">
+                    <input type="submit" class="btn btn-primary" name="plotdata" id="plotdata" value="Plot">
+                    <label class="btn-lg col-lg-4 form-group" style="background-color:royalblue" for="file">
+                        <input id="file" name="file" type="file" style="display:none; ">
+                            Choose a .xlsx File
+                        <input type="submit" value="Upload" id="fsubmit" name="fsubmit" class="btn btn-info">
+                        </label>
+
+                </form>
+
+                {% if tabled  %}
+                    <div id="example" name="example" class="col-lg-12" style="height: 250px ; width:100%;overflow: hidden" ></div>
+                {% endif %}
+
+            </div>
+    </div>
+
+    {% load staticfiles %}
+{% if plotanalysis %}
+<div class="col-lg-12">
+
+
+                <div class="col-lg-6">
+                    <img src="{% static imagelink %} " class="col-lg-12" >
+                    <p class="col-lg-12">File : <a class="btn btn-sm btn-warning"  href="{%   static  filelink %} " download>XLSX</a></p>
+                    <p class="col-lg-12"> Image:
+                    <a  class="btn btn-sm btn-warning" href="{% static  image %}.png" download>PNG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.jpg"download>JPG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.jpeg" download>JPEG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.ps" download>PS</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.pdf" download>PDF</a>
+
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.tiff" download>TIFF</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.tif" download>TIF</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.eps" download>EPS</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.svg" download>SVG</a>
+                    <a class="btn btn-sm btn-warning" href="{% static  image %}.svgz" download>SVGZ</a>
+                    </p>
+                </div>
+                <div name="bokeh" class="col-lg-6">
+                    {{ div_tag |safe }}
+                </div>
+
+
+</div>
+
+{% endif %}
