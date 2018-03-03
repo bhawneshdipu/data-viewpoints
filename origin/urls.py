@@ -25,11 +25,22 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^graph/',include('graph.urls')),
     url(r'^ann/',include('ann.urls')),
+
     url(r'^fplot/',include('fplot.urls')),
     url(r'^pplot/', include('pplot.urls')),
     url(r'^reg/', include('reg.urls')),
     url(r'^plot3d/', include('plot3d.urls')),
     url(r'^analysis/', include('analysis.urls')),
     url(r'^mnist/', include('mnist.urls')),
+    url(r'^admin', admin.site.urls),
+    url(r'^graph',include('graph.urls')),
+    url(r'^ann',include('ann.urls')),
+
+    url(r'^fplot',include('fplot.urls')),
+    url(r'^pplot', include('pplot.urls')),
+    url(r'^reg', include('reg.urls')),
+    url(r'^plot3d', include('plot3d.urls')),
+    url(r'^analysis', include('analysis.urls')),
+    url(r'^mnist', include('mnist.urls')),
 
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

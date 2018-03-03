@@ -152,17 +152,17 @@ def index(request):
         ar = np.reshape(ar, (784,))
         print(ar.shape)
         ar = (ar - (255 / 2.0)) / 255  # normalize -0.5 to  0.5
+        ar = ar.reshape(1, -1)
         print(ar)
         classifier = pickle.load(open('mnist/my_digit.py', 'rb'))
         predicted_result=classifier.predict(ar)
         result=predicted_result[0]
-        print(str(' '+str(result)+' '))
+        print(str(' '+str(predicted_result)+' '))
         saved=1
         img_path=str('/static/img/newimage.png')
 
         return  render(request,'image_analysis.html',locals())
     else:
         return render(request, 'image_analysis.html', locals())
-
 
 
