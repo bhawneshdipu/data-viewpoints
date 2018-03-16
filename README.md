@@ -13,6 +13,7 @@ https://github.com/bhawneshdipu/data-viewpoints
 
 # Screenshots
   - **Main**
-  [Main](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/main.png "Main")
-
-  ![alt text](https://github.com/bhawneshdipu/data-viewpoints/master/git-readme/main.png "Bhawnesh Dipu")
+  ![alt text](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/main.png "Bhawnesh Dipu")
+  
+  ![Main](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/main.png "Bhawnesh Dipu")
+  
