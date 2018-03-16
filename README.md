@@ -13,4 +13,4 @@ https://github.com/bhawneshdipu/data-viewpoints
 
 # Screenshots
   - **Main**
-  --  [Main](/git-readme/main.png?raw=true "Main")
+  --  [Main](https://github.com/bhawneshdipu/data-viewpoints/blob/master/git-readme/main.png "Main")
