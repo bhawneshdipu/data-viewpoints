@@ -10,3 +10,7 @@
 https://github.com/bhawneshdipu/data-viewpoints
 
 ***Note:*** *extract mnist/my_digit.py.7z in same folder*
+
+# Screenshots
+  - **Main**
+  --  [Main](/git-readme/main.png?raw=true "Main")
