@@ -21,7 +21,7 @@ https://github.com/bhawneshdipu/data-viewpoints
     ![Graph](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/graph.png "Bhawnesh Dipu")
   - **3D**
     ![3D](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/3d.png "Bhawnesh Dipu")
-    ![Plot3D](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/3dplot.png "Bhawnesh Dipu")
+    ![Plot3D](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/plot3d.png "Bhawnesh Dipu")
   - **Function**
     ![Function](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/function.png "Bhawnesh Dipu")
   - **Parametric**
