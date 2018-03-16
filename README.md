@@ -17,8 +17,11 @@ https://github.com/bhawneshdipu/data-viewpoints
   - **Module**
     ![Module](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/module.png "Bhawnesh Dipu")
   - **Graph**
-    ![Graph-Empty](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/graph-empty.png "Bhawnesh Dipu")
+    ![Graph-Empty](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/graph-module.png "Bhawnesh Dipu")
     ![Graph](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/graph.png "Bhawnesh Dipu")
+  - **Hand Written Digit Recognition**
+    ![ Written Digit Recognition](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/digit.png "Bhawnesh Dipu")
+    ![ Written Digit Recognition](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/digit-out.png "Bhawnesh Dipu")
   - **3D**
     ![3D](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/3d.png "Bhawnesh Dipu")
     ![Plot3D](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/plot3d.png "Bhawnesh Dipu")
