@@ -13,7 +13,29 @@ https://github.com/bhawneshdipu/data-viewpoints
 
 # Screenshots
   - **Main**
-  ![alt text](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/main.png "Bhawnesh Dipu")
-  
-  ![Main](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/main.png "Bhawnesh Dipu")
+    ![Main](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/main.png "Bhawnesh Dipu")
+  - **Module**
+    ![Module](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/module.png "Bhawnesh Dipu")
+  - **Graph**
+    ![Graph-Empty](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/graph-empty.png "Bhawnesh Dipu")
+    ![Graph](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/graph.png "Bhawnesh Dipu")
+  - **3D**
+    ![3D](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/3d.png "Bhawnesh Dipu")
+    ![Plot3D](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/3dplot.png "Bhawnesh Dipu")
+  - **Function**
+    ![Function](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/function.png "Bhawnesh Dipu")
+  - **Parametric**
+    ![Parametric](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/parametric.png "Bhawnesh Dipu")
+  - **Analysis**
+    ![Analysis](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/analysis.png "Bhawnesh Dipu")
+  - **Intepolation**
+    ![Interpolation](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/interpolation.png "Bhawnesh Dipu")
+    
+  - **Regression**
+    ![Regression](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/regression.png "Bhawnesh Dipu")
+    ![Curve Fit](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/curvefit.png "Bhawnesh Dipu")
+  - **Clustering**
+    ![Clustering](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/clustering.png "Bhawnesh Dipu")
+  - **Contour**
+    ![Contour](https://raw.githubusercontent.com/bhawneshdipu/data-viewpoints/master/git-readme/contour.png "Bhawnesh Dipu")
   
