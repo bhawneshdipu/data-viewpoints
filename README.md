@@ -8,8 +8,8 @@
 
 #### The web-based tool is developed using the Django web framework in python as a backend language with its different packages used for full filling the different need of the user.
 
-https://github.com/bhawneshdipu/data-viewpoints
-https://bhawneshdipu.github.io/data-viewpoints/
+[Link To Github!](https://github.com/bhawneshdipu/data-viewpoints)
+[Link To Github!](https://bhawneshdipu.github.io/data-viewpoints/)
 
 ***Note:*** *extract mnist/my_digit.py.7z in same folder*
 
